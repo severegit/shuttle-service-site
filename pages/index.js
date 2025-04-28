@@ -19,16 +19,16 @@ export default function ShuttleServicePage() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
-      <header className="text-center mb-12 p-8">
-        <motion.h1 
-          initial={{ opacity: 0, y: -20 }} 
-          animate={{ opacity: 1, y: 0 }} 
+      <header className="text-center mb-12 p-8 bg-blue-700 text-white">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl font-extrabold text-blue-700 mb-4"
+          className="text-5xl font-extrabold mb-4"
         >
           Ave Maria to Sunrise Shuttle Service
         </motion.h1>
-        <p className="text-lg text-gray-600">
+        <p className="text-lg">
           Your direct connection from Ave Maria to the Sunrise Park & Ride, linking you to Miami via 95 Express and Tri-Rail.
         </p>
       </header>
@@ -69,22 +69,35 @@ export default function ShuttleServicePage() {
         <div className="bg-gray-100 shadow-lg p-8 rounded-lg">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Pay for Your Pass</h2>
           <div className="flex flex-col gap-4 mt-4">
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/eVacOJ7Ff0HSbbWcMN")}>5:30 AM Monthly Pass ($400)</button>
+            {/* 5:30 AM Departure */}
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/cN201X9Nn4Y8eo89AA")}>
+              5:30 AM Monthly Pass ($400)
+            </button>
 
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/cN201X9Nn4Y8eo89AA")}>5:30 AM One-Way Ticket ($25)</button>
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/eVacOJ7Ff0HSbbWcMN")}>
+              5:30 AM One-Way Ticket ($25)
+            </button>
 
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/eVacOJ7Ff0HSbbWcMN")}>6:30 AM Monthly Pass ($400)</button>
+            {/* 6:30 AM Departure */}
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/3cs3e9bVvcqA3Ju5ko")}>
+              6:30 AM Monthly Pass ($400)
+            </button>
 
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/cN201X9Nn4Y8eo89AA")}>6:30 AM One-Way Ticket ($25)</button>
-          </div>
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/4gw1617Ff2Q0gwgeUX")}>
+              6:30 AM One-Way Ticket ($25)
+            </button>
 
-          <div className="mt-10 bg-yellow-100 p-4 rounded-lg">
-            <h3 className="text-lg font-semibold text-yellow-700 mb-2">Testing Area (Internal Use Only)</h3>
-            <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/5kA4id1gR2Q05RCaEG")}>$1 Test Ticket</button>
+            {/* TESTING AREA */}
+            <div className="mt-10 bg-yellow-100 p-4 rounded-lg">
+              <h3 className="text-lg font-semibold text-yellow-700 mb-2">Testing Area (Internal Use Only)</h3>
+              <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/5kA4id1gR2Q05RCaEG")}>
+                $1 Test Ticket
+              </button>
+            </div>
           </div>
         </div>
 
-        <div className="bg-white shadow-lg p-8 rounded-lg">
+        <div className="bg-white shadow-lg p-8 rounded-lg" id="faq">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
           <ul className="text-gray-600 list-disc list-inside space-y-2">
             <li><strong>Where do we meet?</strong> Town center parking area in Ave Maria.</li>
