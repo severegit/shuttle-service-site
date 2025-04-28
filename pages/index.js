@@ -93,12 +93,16 @@ export default function ShuttleServicePage() {
           <div className="mt-8 text-center">
             <h3 className="text-xl font-semibold mb-4">Pay for Your Pass</h3>
             <div className="flex flex-col gap-4">
-         <button className="w-full border py-2 rounded" onClick={() => handlePayment("https://buy.stripe.com/eVacOJ7Ff0HSbbWcMN")}>
+<button className="w-full border py-2 rounded" onClick={() => handlePayment("https://buy.stripe.com/eVacOJ7Ff0HSbbWcMN")}>
   Pay $400 Monthly Pass
 </button>
 
 <button className="w-full border py-2 rounded" onClick={() => handlePayment("https://buy.stripe.com/cN201X9Nn4Y8eo89AA")}>
   Pay $25 One-Way Ticket
+</button>
+
+<button className="w-full border py-2 rounded" onClick={() => handlePayment("https://buy.stripe.com/5kA4id1gR2Q05RCaEG")}>
+  Pay $1 Test
 </button>
 
 
