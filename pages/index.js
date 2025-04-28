@@ -4,10 +4,8 @@ import { useRouter } from "next/router";
 
 export default function ShuttleServicePage() {
   const [schedule, setSchedule] = useState([
-    { time: "5:30 AM", destination: "Sunrise Park & Ride" },
-    { time: "6:30 AM", destination: "Sunrise Park & Ride" },
-    { time: "6:00 PM", destination: "Ave Maria" },
-    { time: "7:00 PM", destination: "Ave Maria" }
+    { time: "5:30 AM", from: "Ave Maria", to: "Sunrise Park & Ride" },
+    { time: "6:30 AM", from: "Ave Maria", to: "Sunrise Park & Ride" }
   ]);
 
   const router = useRouter();
@@ -50,7 +48,7 @@ export default function ShuttleServicePage() {
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Live Schedule</h2>
           <ul className="text-gray-600 list-disc list-inside space-y-2">
             {schedule.map((item, index) => (
-              <li key={index}>{item.time} - {item.destination}</li>
+              <li key={index}>{item.time} - Depart {item.from} ➔ Arrive {item.to}</li>
             ))}
           </ul>
         </div>
@@ -58,8 +56,10 @@ export default function ShuttleServicePage() {
         <div className="bg-white shadow-lg p-8 rounded-lg">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Schedule & Pricing</h2>
           <ul className="text-gray-600 list-disc list-inside space-y-2">
-            <li>Monthly Pass: $400</li>
-            <li>One-Way Ticket: $25</li>
+            <li>5:30 AM Departure Monthly Pass: $400</li>
+            <li>5:30 AM Departure One-Way Ticket: $25</li>
+            <li>6:30 AM Departure Monthly Pass: $400</li>
+            <li>6:30 AM Departure One-Way Ticket: $25</li>
           </ul>
           <p className="text-gray-600 mt-4">
             Flexible booking options are available.
@@ -69,15 +69,18 @@ export default function ShuttleServicePage() {
         <div className="bg-gray-100 shadow-lg p-8 rounded-lg">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Pay for Your Pass</h2>
           <div className="flex flex-col gap-4 mt-4">
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/cN201X9Nn4Y8eo89AA")}>
-              Pay $400 Monthly Pass
-            </button>
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/eVacOJ7Ff0HSbbWcMN")}>
-              Pay $25 One-Way Ticket
-            </button>
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/5kA4id1gR2Q05RCaEG")}>
-              Pay $1 Test Product
-            </button>
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/eVacOJ7Ff0HSbbWcMN")}>5:30 AM Monthly Pass ($400)</button>
+
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/cN201X9Nn4Y8eo89AA")}>5:30 AM One-Way Ticket ($25)</button>
+
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/eVacOJ7Ff0HSbbWcMN")}>6:30 AM Monthly Pass ($400)</button>
+
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/cN201X9Nn4Y8eo89AA")}>6:30 AM One-Way Ticket ($25)</button>
+          </div>
+
+          <div className="mt-10 bg-yellow-100 p-4 rounded-lg">
+            <h3 className="text-lg font-semibold text-yellow-700 mb-2">Testing Area (Internal Use Only)</h3>
+            <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/5kA4id1gR2Q05RCaEG")}>$1 Test Ticket</button>
           </div>
         </div>
 
