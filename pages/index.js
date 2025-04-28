@@ -10,13 +10,7 @@ export default function ShuttleServicePage() {
     { time: "7:00 PM", destination: "Ave Maria" }
   ]);
 
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const router = useRouter();
-
-  const handleReserveSubmit = (e) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-  };
 
   const handlePayment = (url) => {
     setTimeout(() => {
@@ -73,38 +67,19 @@ export default function ShuttleServicePage() {
         </div>
 
         <div className="shadow-xl p-6 rounded-lg border">
-          <h2 className="text-2xl font-semibold mb-2">Reserve Your Seat & Payment</h2>
-          {!formSubmitted ? (
-            <form onSubmit={handleReserveSubmit} className="space-y-4">
-              <input type="text" placeholder="Full Name" required className="w-full border p-2 rounded" />
-              <input type="email" placeholder="Email Address" required className="w-full border p-2 rounded" />
-              <input type="tel" placeholder="Phone Number" required className="w-full border p-2 rounded" />
-              <button className="w-full bg-black text-white py-2 rounded" type="submit">Reserve Now</button>
-            </form>
-          ) : (
-            <motion.div 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 1 }} 
-              className="text-green-600 text-center font-semibold mt-4"
-            >
-              Thank you! Your reservation has been received.
-            </motion.div>
-          )}
-          <div className="mt-8 text-center">
-            <h3 className="text-xl font-semibold mb-4">Pay for Your Pass</h3>
-            <div className="flex flex-col gap-4">
-              <button className="w-full border py-2 rounded" onClick={() => handlePayment("https://buy.stripe.com/eVacOJ7Ff0HSbbWcMN")}>
-                Pay $400 Monthly Pass
-              </button>
+          <h2 className="text-2xl font-semibold mb-2">Pay for Your Pass</h2>
+          <div className="flex flex-col gap-4 mt-4">
+            <button className="w-full border py-2 rounded" onClick={() => handlePayment("https://buy.stripe.com/eVacOJ7Ff0HSbbWcMN")}>
+              Pay $400 Monthly Pass
+            </button>
 
-              <button className="w-full border py-2 rounded" onClick={() => handlePayment("https://buy.stripe.com/cN201X9Nn4Y8eo89AA")}>
-                Pay $25 One-Way Ticket
-              </button>
+            <button className="w-full border py-2 rounded" onClick={() => handlePayment("https://buy.stripe.com/cN201X9Nn4Y8eo89AA")}>
+              Pay $25 One-Way Ticket
+            </button>
 
-              <button className="w-full border py-2 rounded" onClick={() => handlePayment("https://buy.stripe.com/5kA4id1gR2Q05RCaEG")}>
-                Pay $1 Test Product
-              </button>
-            </div>
+            <button className="w-full border py-2 rounded" onClick={() => handlePayment("https://buy.stripe.com/5kA4id1gR2Q05RCaEG")}>
+              Pay $1 Test Product
+            </button>
           </div>
         </div>
 
