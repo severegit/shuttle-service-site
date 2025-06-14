@@ -16,7 +16,6 @@ export default function ShuttleServicePage() {
   { time: "7:30 PM", from: "Sunrise Park & Ride", to: "Ave Maria" }
 ];
 
-
   const router = useRouter();
 
   const handlePayment = (url) => {
