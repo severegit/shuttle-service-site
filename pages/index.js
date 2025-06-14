@@ -86,7 +86,8 @@ export default function ShuttleServicePage() {
       </main>
 
       <footer className="text-center text-gray-500 mt-16 p-4">
-        © {new Date().getFullYear()} Ave Maria Shuttle Service. All rights reserved.
+        © {new Date().getFullYear()} Ave Maria Shuttle Service. All rights reserved.<a href="/privacy-policy" className="underline text-blue-600 hover:text-blue-800">Privacy Policy</a>
+
       </footer>
     </div>
   );
