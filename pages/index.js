@@ -3,12 +3,19 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
 export default function ShuttleServicePage() {
-  const [schedule, setSchedule] = useState([
-    { time: "5:45 AM", from: "Ave Maria", to: "Sunrise Park & Ride" },
-    { time: "7:30 AM", from: "Sunrise Park & Ride", to: "Ave Maria" },
-    { time: "9:15 AM", from: "Ave Maria", to: "Sunrise Park & Ride" },
-    { time: "9:15 AM", from: "Ave Maria", to: "Sunrise Park & Ride" }
-  ]);
+  const shuttleSchedule = [
+  { time: "5:30 AM", from: "Ave Maria", to: "Sunrise Park & Ride" },
+  { time: "7:10 AM", from: "Sunrise Park & Ride", to: "Ave Maria" },
+  { time: "8:50 AM", from: "Ave Maria", to: "Sunrise Park & Ride" },
+  { time: "10:30 AM", from: "Sunrise Park & Ride", to: "Ave Maria" },
+  { time: "12:10 PM", from: "Ave Maria", to: "Sunrise Park & Ride" },
+  { time: "1:50 PM", from: "Sunrise Park & Ride", to: "Ave Maria" },
+  { time: "3:30 PM", from: "Ave Maria", to: "Sunrise Park & Ride" },
+  { time: "5:10 PM", from: "Sunrise Park & Ride", to: "Ave Maria" },
+  { time: "6:50 PM", from: "Ave Maria", to: "Sunrise Park & Ride" },
+  { time: "7:30 PM", from: "Sunrise Park & Ride", to: "Ave Maria" }
+];
+
 
   const router = useRouter();
 
@@ -53,19 +60,6 @@ export default function ShuttleServicePage() {
               <li key={index}>{item.time} - Depart {item.from} ➔ Arrive {item.to}</li>
             ))}
           </ul>
-        </div>
-
-        <div className="bg-white shadow-lg p-8 rounded-lg">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Schedule & Pricing</h2>
-          <ul className="text-gray-600 list-disc list-inside space-y-2">
-            <li>5:30 AM Departure Monthly Pass: $400</li>
-            <li>5:30 AM Departure One-Way Ticket: $25</li>
-            <li>6:30 AM Departure Monthly Pass: $400</li>
-            <li>6:30 AM Departure One-Way Ticket: $25</li>
-          </ul>
-          <p className="text-gray-600 mt-4">
-            Flexible booking options are available.
-          </p>
         </div>
 
         <div className="bg-gray-100 shadow-lg p-8 rounded-lg">

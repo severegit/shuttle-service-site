@@ -13,7 +13,7 @@ export default function ThankYouPage() {
           Thank You!
         </motion.h1>
         <p className="text-lg text-gray-700 mb-6">
-          Your payment was successful. We look forward to serving you!
+          We look forward to serving you!
         </p>
         <button className="bg-black text-white px-6 py-2 rounded" onClick={() => window.location.href = "/"}>
           Return to Home
