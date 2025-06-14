@@ -71,7 +71,7 @@ export default function ShuttleServicePage() {
         <div className="bg-gray-100 shadow-lg p-8 rounded-lg">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Pay for Your Pass</h2>
           <div className="flex flex-col gap-4 mt-4">
-            <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/your-reservation-link")}>Reserve Your Seat ($5 refundable)</button>
+            <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/fZubJ10b96JK4OH9zA6oo05")}>Reserve Your Seat ($5 refundable)</button>
           </div>
         </div>
 
