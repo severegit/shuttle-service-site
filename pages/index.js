@@ -4,17 +4,17 @@ import { useRouter } from "next/router";
 
 export default function ShuttleServicePage() {
   const shuttleSchedule = [
-  { time: "5:30 AM", from: "Ave Maria", to: "Sunrise Park & Ride" },
-  { time: "7:10 AM", from: "Sunrise Park & Ride", to: "Ave Maria" },
-  { time: "8:50 AM", from: "Ave Maria", to: "Sunrise Park & Ride" },
-  { time: "10:30 AM", from: "Sunrise Park & Ride", to: "Ave Maria" },
-  { time: "12:10 PM", from: "Ave Maria", to: "Sunrise Park & Ride" },
-  { time: "1:50 PM", from: "Sunrise Park & Ride", to: "Ave Maria" },
-  { time: "3:30 PM", from: "Ave Maria", to: "Sunrise Park & Ride" },
-  { time: "5:10 PM", from: "Sunrise Park & Ride", to: "Ave Maria" },
-  { time: "6:50 PM", from: "Ave Maria", to: "Sunrise Park & Ride" },
-  { time: "7:30 PM", from: "Sunrise Park & Ride", to: "Ave Maria" }
-];
+    { time: "5:30 AM", from: "Ave Maria", to: "Sunrise Park & Ride" },
+    { time: "7:10 AM", from: "Sunrise Park & Ride", to: "Ave Maria" },
+    { time: "8:50 AM", from: "Ave Maria", to: "Sunrise Park & Ride" },
+    { time: "10:30 AM", from: "Sunrise Park & Ride", to: "Ave Maria" },
+    { time: "12:10 PM", from: "Ave Maria", to: "Sunrise Park & Ride" },
+    { time: "1:50 PM", from: "Sunrise Park & Ride", to: "Ave Maria" },
+    { time: "3:30 PM", from: "Ave Maria", to: "Sunrise Park & Ride" },
+    { time: "5:10 PM", from: "Sunrise Park & Ride", to: "Ave Maria" },
+    { time: "6:50 PM", from: "Ave Maria", to: "Sunrise Park & Ride" },
+    { time: "7:30 PM", from: "Sunrise Park & Ride", to: "Ave Maria" }
+  ];
 
   const router = useRouter();
 
@@ -55,8 +55,10 @@ export default function ShuttleServicePage() {
         <div className="bg-gray-100 shadow-lg p-8 rounded-lg">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Future Schedule</h2>
           <ul className="text-gray-600 list-disc list-inside space-y-2">
-            {schedule.map((item, index) => (
-              <li key={index}>{item.time} - Depart {item.from} ➔ Arrive {item.to}</li>
+            {shuttleSchedule.map((item, index) => (
+              <li key={index}>
+                {item.time} - Depart {item.from} ➔ Arrive {item.to}
+              </li>
             ))}
           </ul>
         </div>
@@ -64,23 +66,45 @@ export default function ShuttleServicePage() {
         <div className="bg-gray-100 shadow-lg p-8 rounded-lg">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Pay for Your Pass</h2>
           <div className="flex flex-col gap-4 mt-4">
-            <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/fZubJ10b96JK4OH9zA6oo05")}>Reserve Your Seat ($5 refundable)</button>
+            <button
+              className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition duration-300"
+              onClick={() =>
+                handlePayment("https://buy.stripe.com/fZubJ10b96JK4OH9zA6oo05")
+              }
+            >
+              Reserve Your Seat ($5 refundable)
+            </button>
           </div>
         </div>
 
         <div className="bg-white shadow-lg p-8 rounded-lg" id="faq">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            Frequently Asked Questions
+          </h2>
           <ul className="text-gray-600 list-disc list-inside space-y-2">
-            <li><strong>Where do we meet?</strong> Town center parking area in Ave Maria.</li>
-            <li><strong>Same-day reservations?</strong> Yes, but space is limited.</li>
-            <li><strong>Wi-Fi on board?</strong> Yes, free Wi-Fi available.</li>
+            <li>
+              <strong>Where do we meet?</strong> Town center parking area in Ave
+              Maria.
+            </li>
+            <li>
+              <strong>Same-day reservations?</strong> Yes, but space is limited.
+            </li>
+            <li>
+              <strong>Wi-Fi on board?</strong> Yes, free Wi-Fi available.
+            </li>
           </ul>
         </div>
       </main>
 
       <footer className="text-center text-gray-500 mt-16 p-4">
-        © {new Date().getFullYear()} Ave Maria Shuttle Service. All rights reserved.<a href="/privacy-policy" className="underline text-blue-600 hover:text-blue-800">Privacy Policy</a>
-
+        © {new Date().getFullYear()} Ave Maria Shuttle Service. All rights
+        reserved.{" "}
+        <a
+          href="/privacy-policy"
+          className="underline text-blue-600 hover:text-blue-800"
+        >
+          Privacy Policy
+        </a>
       </footer>
     </div>
   );
