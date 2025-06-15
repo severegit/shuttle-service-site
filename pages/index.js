@@ -26,7 +26,7 @@ export default function ShuttleServicePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans">
+    <div className="min-h-screen bg-blue-50 font-sans">
       <header className="text-center mb-12 p-8 bg-blue-700 text-white">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
@@ -42,69 +42,44 @@ export default function ShuttleServicePage() {
       </header>
 
       <main className="grid gap-10 p-8">
-        <div className="bg-white shadow-lg p-8 rounded-lg">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">About Our Service</h2>
-          <p className="text-gray-600 mb-4">
+        <div className="bg-blue-100 shadow-lg p-8 rounded-lg">
+          <h2 className="text-3xl font-bold text-blue-800 mb-4">About Our Service</h2>
+          <p className="text-gray-700 mb-4">
             We offer a reliable and comfortable shuttle between Ave Maria, FL and the Sunrise Park & Ride.
           </p>
-          <p className="text-gray-600">
+          <p className="text-gray-700">
             Departures from Ave Maria are timed to align with major 95 Express departures.
           </p>
         </div>
 
-        <div className="bg-gray-100 shadow-lg p-8 rounded-lg">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Future Schedule</h2>
-          <ul className="text-gray-600 list-disc list-inside space-y-2">
+        <div className="bg-white shadow-lg p-8 rounded-lg">
+          <h2 className="text-3xl font-bold text-blue-800 mb-4">Future Schedule</h2>
+          <ul className="text-gray-700 list-disc list-inside space-y-2">
             {shuttleSchedule.map((item, index) => (
-              <li key={index}>
-                {item.time} - Depart {item.from} ➔ Arrive {item.to}
-              </li>
+              <li key={index}>{item.time} - Depart {item.from} ➔ Arrive {item.to}</li>
             ))}
           </ul>
         </div>
 
-        <div className="bg-gray-100 shadow-lg p-8 rounded-lg">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Pay for Your Pass</h2>
+        <div className="bg-blue-100 shadow-lg p-8 rounded-lg">
+          <h2 className="text-3xl font-bold text-blue-800 mb-4">Pay for Your Pass</h2>
           <div className="flex flex-col gap-4 mt-4">
-            <button
-              className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition duration-300"
-              onClick={() =>
-                handlePayment("https://buy.stripe.com/fZubJ10b96JK4OH9zA6oo05")
-              }
-            >
-              Reserve Your Seat ($5 refundable)
-            </button>
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300" onClick={() => handlePayment("https://buy.stripe.com/fZubJ10b96JK4OH9zA6oo05")}>Reserve Your Seat ($5 refundable)</button>
           </div>
         </div>
 
         <div className="bg-white shadow-lg p-8 rounded-lg" id="faq">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Frequently Asked Questions
-          </h2>
-          <ul className="text-gray-600 list-disc list-inside space-y-2">
-            <li>
-              <strong>Where do we meet?</strong> Town center parking area in Ave
-              Maria.
-            </li>
-            <li>
-              <strong>Same-day reservations?</strong> Yes, but space is limited.
-            </li>
-            <li>
-              <strong>Wi-Fi on board?</strong> Yes, free Wi-Fi available.
-            </li>
+          <h2 className="text-3xl font-bold text-blue-800 mb-4">Frequently Asked Questions</h2>
+          <ul className="text-gray-700 list-disc list-inside space-y-2">
+            <li><strong>Where do we meet?</strong> Town center parking area in Ave Maria.</li>
+            <li><strong>Same-day reservations?</strong> Yes, but space is limited.</li>
+            <li><strong>Wi-Fi on board?</strong> Yes, free Wi-Fi available.</li>
           </ul>
         </div>
       </main>
 
       <footer className="text-center text-gray-500 mt-16 p-4">
-        © {new Date().getFullYear()} Ave Maria Shuttle Service. All rights
-        reserved.{" "}
-        <a
-          href="/privacy-policy"
-          className="underline text-blue-600 hover:text-blue-800"
-        >
-          Privacy Policy
-        </a>
+        © {new Date().getFullYear()} Ave Maria Shuttle Service. All rights reserved. <a href="/privacy-policy" className="underline text-blue-600 hover:text-blue-800">Privacy Policy</a>
       </footer>
     </div>
   );
